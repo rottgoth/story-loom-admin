@@ -41,7 +41,7 @@ const Stories = () => {
   const handleCreateStory = () => {
     axios.post(`${API_URL}/stories`, newStory, axiosConfig)
       .then(response => {
-        setStories([...stories, response.data]);
+        setStories([...stories, response.data.story]);
         setIsModalOpen(false);
         setNewStory({ name: "", short_description: "", status: "draft" });
       })
