@@ -15,7 +15,7 @@ const SignUp = ({ onSignUp }) => {
     setError(null);
 
     try {
-      const response = await axios.post(`${API_URL}/registrations`, {
+      const response = await axios.post(`${API_URL}/admin/registrations`, {
         email,
         password,
         password_confirmation: passwordConfirmation,

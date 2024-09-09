@@ -14,7 +14,7 @@ const SignIn = ({ onLogin }) => {
     setError(null);
 
     try {
-      const response = await axios.post(`${API_URL}/sessions`, {
+      const response = await axios.post(`${API_URL}/admin/sessions`, {
         email,
         password
       });
