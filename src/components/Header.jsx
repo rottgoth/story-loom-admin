@@ -14,6 +14,9 @@ const Header = ({ isLoggedIn, handleLogout }) => {
                   <Link to="/dashboard" className="text-white mx-2">Dashboard</Link>
                 </li>
                 <li>
+                  <Link to="/stories" className="text-white mx-2">Stories</Link>
+                </li>
+                <li>
                   <button onClick={handleLogout} className="text-white mx-2">Logout</button>
                 </li>
               </>

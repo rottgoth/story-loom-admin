@@ -1,11 +1,12 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate, useNavigate } from "react-router-dom";
-import Header from "./components/Header";
-import SignUp from "./components/SignUp";
-import SignIn from "./components/SignIn";
-import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+import Stories from "./components/Stories";
 
 
 const App = () => {
@@ -40,10 +41,14 @@ const App = () => {
       <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
       {success && <p style={{ color: "green" }}>{success}</p>}
       <Routes>
-      <Route path="/" element={isLoggedIn ? <Navigate to="/dashboard" /> : <Home />} />
+      <Route path="/" element={isLoggedIn ? <Navigate to="/stories" /> : <Home />} />
         <Route
           path="/dashboard"
           element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/stories"
+          element={isLoggedIn ? <Stories /> : <Navigate to="/" />}
         />
         <Route path="/signin" element={<SignIn onLogin={handleLogin} />} />
         <Route path="/signup" element={<SignUp onSignUp={handleLogin} />} />
